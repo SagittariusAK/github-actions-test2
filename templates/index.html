@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AK</title>
+  <script>
+    var sizes = [0, 1, 2, 4, 8, 10];
+    var pos = 0;
+    var direction = 1;
+
+    function elastic() {
+      var el = document.getElementById('elastic');
+      if (direction === 1 && (pos === sizes.length - 1)) {
+        direction = -1;
+      } else if (direction === -1 && (pos === 0)) {
+        direction = 1;
+      }
+      el.style.letterSpacing = sizes[pos += direction] + 'px';
+      setTimeout(elastic, 100);
+    }
+  </script>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body onload="elastic()">
+  <center>
+    <h2>Hello from <font color="yellow">AK!</font></h2>
+    <h3>Welcome to Python Flask Web !</h3>
+    <h1 id="elastic" style="text-align: center;">GitHub Actions</h1>
+	<h1 id="elastic" style="text-align: center;">Cool</h1>
+  </center>
+</body>
+</html>
